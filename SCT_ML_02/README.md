@@ -45,15 +45,13 @@ The dataset used is `Mall_Customers.csv`, which includes the following features:
 
 ### 📌 Elbow Method  
 Identifies the optimal number of clusters by plotting the Within-Cluster Sum of Squares (WCSS):  
-![Elbow Plot](https://github.com/user-attachments/assets/a9733b32-92d3-4c38-9ed8-2ed482c8fe34)
+![Elbow Plot]<img width="699" height="421" alt="TS-2 elbow_plot png" src="https://github.com/user-attachments/assets/22350eaa-a5bd-4fa7-98d9-6a774ce42447" />
 
----
 
 ### 📌 Customer Segmentation  
 Clusters of customers based on spending behavior and income:  
-![Cluster Plot](https://github.com/user-attachments/assets/25597601-3cae-4d99-a0ac-b01ec06bd62a)
+![Cluster Plot] <img width="695" height="490" alt="TS-2 cluster_plot" src="https://github.com/user-attachments/assets/616cd585-61be-4e47-bcb7-44b85857b171" />
 
----
 
 ## ✅ Results Summary
 
