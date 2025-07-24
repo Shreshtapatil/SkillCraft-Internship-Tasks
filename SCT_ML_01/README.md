@@ -53,10 +53,11 @@ The dataset used was synthetically generated to reflect realistic housing data. 
 ## 📈 Visualizations
 
 ### 📌 Actual vs Predicted Prices  
-<img src="https://github.com/user-attachments/assets/ae4b7199-fdad-45b7-a569-1950676f240d" width="600"/>
+<img width="794" height="536" alt="TS-1 Actual vs Predicted" src="https://github.com/user-attachments/assets/ce9776af-8fb3-4ad9-95f4-9bcd04e41de9" />
 
 ### 📌 Residuals vs Predicted  
-<img src="https://github.com/user-attachments/assets/b3c7da95-04d8-496b-856c-bd026b9aa86f" width="600"/>
+<img width="1156" height="743" alt="TS-1 Predicated vs actual" src="https://github.com/user-attachments/assets/eb21d2b5-c584-4366-941c-ebd9c0cb5679" />
+
 
 ---
 
