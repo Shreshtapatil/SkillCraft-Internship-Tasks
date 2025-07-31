@@ -1,4 +1,5 @@
 # 🧠 Sign Language Recognition using Machine Learning (KNN)
+Dataset : https://www.kaggle.com/datasets/datamunge/sign-language-mnist
 
 **Internship Task:** SCT_ML_04  
 **Organization:** SkillCraft Technology  
