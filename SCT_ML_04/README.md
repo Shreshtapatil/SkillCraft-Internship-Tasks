@@ -1,108 +1,111 @@
-Dataset Source : https://www.kaggle.com/datasets/datamunge/sign-language-mnist
+# 🧠 Sign Language Recognition using Machine Learning (KNN)
 
-# SCT_DL_04  
-**Internship Task 04 – Hand Gesture Recognition using Convolutional Neural Networks (CNN)**  
-💼 SkillCraft Technology | 📅 July 2025  
-
----
-
-## ✋ Hand Gesture Recognition using CNN
-
-This project is part of my internship with **SkillCraft Technology** under the Task ID `SCT_DL_04`.  
-The objective was to develop a model that can accurately **identify and classify hand gestures** from images to enable gesture-based human-computer interactions.
-
-Although the original task referenced a different dataset, I used the **Sign Language MNIST** dataset for effective image-based classification of hand gestures.
+**Internship Task:** SCT_ML_04  
+**Organization:** SkillCraft Technology  
+**Duration:** July 2025  
+**Role:** Data Science Intern  
+**Project Domain:** Image Classification | Supervised Learning  
 
 ---
 
-## 📚 Libraries Used
+## 📌 Objective
 
-- `pandas` – Data handling and manipulation  
-- `numpy` – Numerical operations  
-- `matplotlib`, `seaborn` – Visualization  
-- `tensorflow.keras` – Model building and training  
-- `scikit-learn` – Evaluation metrics  
+To develop a machine learning model that accurately recognizes American Sign Language (ASL) alphabets (A–Z excluding dynamic gestures) from grayscale image data. The goal is to enhance gesture-based human-computer interaction, especially for differently-abled individuals.
 
 ---
 
-## 🗂 Dataset
+## 📊 Dataset Overview
 
-I used the **Sign Language MNIST Dataset** available in CSV format:
+- **Dataset:** Sign Language MNIST  
+- **Source:** [Kaggle – Sign Language MNIST](https://www.kaggle.com/datasets/datamunge/sign-language-mnist)  
+- **Format:** Flattened 28×28 grayscale images  
+- **Classes:** 0–25 representing A–Z (excluding J and Z)  
+- **Training Samples:** 27,455  
+- **Testing Samples:** 7,172  
 
-- 27,455 training images  
-- 7,172 testing images  
-- 28×28 grayscale images  
-- Labels from A–Z (26 classes)
-
-Each image is represented by 784 pixel values and a label column indicating the hand gesture class.
-
----
-
-## 🧠 CNN Model Architecture
-
-The deep learning model was built using **TensorFlow Keras** with the following architecture:
-
-- `Conv2D(32)` → `ReLU` → `MaxPooling2D`  
-- `Conv2D(64)` → `ReLU` → `MaxPooling2D`  
-- `Flatten()`  
-- `Dense(128)` → `Dropout(0.3)`  
-- `Dense(26)` with `Softmax` activation for multi-class classification  
-
-### Compilation:
-
-- **Loss Function**: `categorical_crossentropy`  
-- **Optimizer**: `adam`  
-- **Metrics**: `accuracy`  
-- **Epochs**: 10  
-- **Batch Size**: 64  
+Each row in the CSV corresponds to a single hand gesture represented as pixel values and a label.
 
 ---
 
-## 🏋️ Training & Testing
+## 🧰 Technologies & Tools Used
 
-- Dataset reshaped to (28, 28, 1) and normalized  
-- One-hot encoded labels using `to_categorical()`  
-- 10 epochs of training with validation on test set  
-
----
-
-## 📊 Model Performance
-
-| Metric        | Value        |
-|---------------|--------------|
-| Test Accuracy | ~94.67%      |
-| Test Loss     | ~0.18        |
+- **Language:** Python  
+- **Libraries:**  
+  - `pandas`, `numpy` – Data Handling  
+  - `matplotlib`, `seaborn` – Visualization  
+  - `scikit-learn` – Machine Learning  
+- **Environment:** Jupyter Notebook
 
 ---
 
-## 📈 Visualizations
+## ⚙️ Methodology
 
-### 📌 Accuracy Graph  
-Training vs Validation Accuracy  
-![Accuracy Plot]:<img width="689" height="515" alt="Ts4 accuracy" src="https://github.com/user-attachments/assets/a92e8aea-32e9-4c42-9ae1-660d2071350d" />
+1. **Data Loading:**  
+   - Loaded training and testing CSVs from local paths.  
+   - Extracted labels and reshaped feature vectors into 28×28 images for visualization.
+
+2. **Preprocessing:**  
+   - Normalized pixel values to [0, 1]  
+   - Ensured class balance and distribution.
+
+3. **Model Training:**  
+   - Algorithm: **K-Nearest Neighbors (KNN)**  
+   - Parameter: `n_neighbors = 3`  
+   - Trained on the full training dataset.
+
+4. **Evaluation:**  
+   - Accuracy, Classification Report, and Confusion Matrix on test data.  
+   - Visual validation through predicted image samples.
+
+---
+
+## ✅ Results
+
+- **Test Accuracy:** `94.04%`  
+- **Precision & Recall:** High across most classes  
+- **Model Type:** Non-parametric and interpretable  
+
+---
+
+## 📊 Output Visualizations
+
+### Confusion Matrix  
+Illustrates prediction performance across all sign classes.  
+![Confusion Matrix]: <img width="915" height="710" alt="TS-04 CONFUSION MATRIX KNN" src="https://github.com/user-attachments/assets/60843bb4-d157-4408-9524-8012e02373a6" />
 
 
+---
 
-### 📌 Confusion Matrix  
-Classification heatmap across 26 classes  
-![Confusion Matrix]: <img width="1025" height="773" alt="Ts-4 confusion matrix" src="https://github.com/user-attachments/assets/8dc81039-82a9-4e6e-ab68-d2ef845ec29a" />
+### Sample Predictions  
+Random test images with actual and predicted labels to visually inspect accuracy.  
+![Sample Predictions]: <img width="823" height="777" alt="TS04 - Predicted hand knn" src="https://github.com/user-attachments/assets/378d9402-5da0-4cac-a1f6-b81c67669fce" />
+
 
 
 
 ---
 
-## ✅ Summary
+## 📁 Project Files
 
-- The CNN model successfully classified 26 ASL hand gestures  
-- Achieved **high accuracy** with minimal loss  
-- Demonstrates the power of CNNs in gesture-based recognition tasks  
-- The approach can be extended for real-time gesture control in HCI systems  
+SCT_ML_04/
+├── sign_mnist_train.csv
+├── sign_mnist_test.csv
+├── knn_model_script.py
+├── confusion_matrix_knn.png
+├── sample_predictions_knn.png
+└── README.md
 
 ---
 
-## ▶️ How to Run
+## 📌 Conclusion
 
-1. Clone this repository  
-2. Install the required libraries  
-   ```bash
-   pip install pandas numpy matplotlib seaborn tensorflow scikit-learn
+This project shows that even traditional ML algorithms like KNN can deliver highly accurate results for gesture recognition tasks, given proper preprocessing. While deep learning could further enhance performance, this lightweight solution is interpretable and performs well in real-time or resource-constrained environments.
+
+---
+
+## 🙏 Acknowledgment
+
+Thanks to **SkillCraft Technology** for the internship opportunity and learning experience.  
+Dataset: [Kaggle – Sign Language MNIST](https://www.kaggle.com/datasets/datamunge/sign-language-mnist)
+
+---
